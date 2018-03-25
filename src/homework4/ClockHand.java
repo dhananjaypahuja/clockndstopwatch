@@ -15,6 +15,7 @@ public class ClockHand implements MoveableShape {
      * @param centerY the hand's center y-coordinate
      * @param length the hand's length
      * @param angle the hand's angle, counterclockwise from 3:00
+     */
     public ClockHand(int width, double centerX, double centerY, double length, double angle) {
         this.width = width;
         this.centerX = centerX;
@@ -45,7 +46,7 @@ public class ClockHand implements MoveableShape {
         double endX = centerX + Math.cos(angle)*length;
         double endY = centerY - Math.sin(angle)*length;
         g2.setColor(Color.BLACK);
-        g2.setStroke(new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 1f);
+        g2.setStroke(new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 1f));
         g2.draw(new Line2D.Double(centerX, centerY, endX, endY));
     }
 }
