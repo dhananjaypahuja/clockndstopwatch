@@ -8,7 +8,7 @@ import java.util.*;
 /**
    A Clock face
 */
-public class ClockFace extends JPanel
+public class ClockFace extends JPanel implements MoveableShape
 {
    /**
       Constructs a Clock
@@ -25,7 +25,7 @@ public class ClockFace extends JPanel
       this.setPreferredSize(new Dimension(width, width));
    }
 
-   public void translate(int dx, int dy)
+   @Override public void translate(int dx, int dy)
    {
       x += dx;
       y += dy;
@@ -106,8 +106,12 @@ public class ClockFace extends JPanel
          int ty = (int)(-Math.sin(angleFrom3)*(r-longTickLen-charHeight));
 
          g2.drawString(numStr, (int)cX+tx, (int)cY+ty);
-            
+
       }
+   }
+
+   @Override public void draw(Graphics2D g2) {
+      paintComponent(g2);
    }
 
    private int x;

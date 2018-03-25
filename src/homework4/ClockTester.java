@@ -13,7 +13,7 @@ public class ClockTester
    public static void main(String[] args)
    {
       JFrame frame = new JFrame();
-
+      // TODO add hands
       
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
       
