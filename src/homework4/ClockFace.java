@@ -34,7 +34,6 @@ public class ClockFace extends JPanel implements MoveableShape
    public void paintComponent(Graphics g)
    {
       Graphics2D g2 = (Graphics2D) g;
-      super.paintComponent(g2);
       // draw the ticks
       int tickLen = 10;
       int medTickLen = 15;
@@ -108,6 +107,7 @@ public class ClockFace extends JPanel implements MoveableShape
          g2.drawString(numStr, (int)cX+tx, (int)cY+ty);
 
       }
+      super.paintComponent(g2);
    }
 
    @Override public void draw(Graphics2D g2) {

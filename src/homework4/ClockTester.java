@@ -18,11 +18,11 @@ public class ClockTester
        ClockHand min = new ClockHand(250, 250);
        ClockHand sec = new ClockHand(250, 250);
        MyClock clock = new MyClock(hour, min, sec);
-       hour.draw((Graphics2D)frame.getGraphics());
-       min.draw((Graphics2D)frame.getGraphics());
-       sec.draw((Graphics2D)frame.getGraphics());
 
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
+      icon.add(hour);
+      icon.add(min);
+      icon.add(sec);
       
       frame.setLayout(new BorderLayout());
       frame.add(icon, BorderLayout.CENTER);
