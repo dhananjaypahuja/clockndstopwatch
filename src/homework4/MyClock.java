@@ -30,7 +30,6 @@ public class MyClock{
         clock.add(min);
         clock.add(sec);
         sysClock = Clock.systemUTC();
-        showNow();
     }
 
     public void showNow() {
