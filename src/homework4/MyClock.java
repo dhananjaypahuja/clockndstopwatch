@@ -10,16 +10,16 @@ public class MyClock{
 
     public MyClock(ClockHand hour, ClockHand min, ClockHand sec) {
         this.hour = hour;//Thick and Small
-        hour.setWidth(20);
-        hour.setLength(200);
-        hour.setAngle(90);
+        hour.setWidth(12);
+        hour.setLength(150);
+        hour.setAngle(Math.PI/2);
         this.min = min;//Medium and Long
-        min.setWidth(10);
-        min.setLength(490);
-        min.setAngle(90);
+        min.setWidth(6);
+        min.setLength(200);
+        min.setAngle(Math.PI/2);
         this.sec = sec;//Thin and long
-        sec.setWidth(5);
-        sec.setLength(495);
-        sec.setAngle(90);
+        sec.setWidth(3);
+        sec.setLength(205);
+        sec.setAngle(Math.PI/2);
     }
 }

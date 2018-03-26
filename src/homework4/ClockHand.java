@@ -22,6 +22,9 @@ public class ClockHand extends JComponent implements MoveableShape {
         this.centerY = centerY;
         this.length = length;
         this.angle = angle;
+        setOpaque(false);
+        setVisible(true);
+        setPreferredSize(new Dimension((int) (centerX*2), (int) (centerY*2)));
     }
 
     public ClockHand(double centerX, double centerY) {
@@ -42,11 +45,12 @@ public class ClockHand extends JComponent implements MoveableShape {
         centerX += dx;
         centerY += dy;
     }
-    @Override public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        draw((Graphics2D) g);
-    }
     @Override public void draw(Graphics2D g2) {
+        super.paintComponent(g2);
+        paintComponent(g2);
+    }
+    @Override public void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
         double endX = centerX + Math.cos(angle)*length;
         double endY = centerY - Math.sin(angle)*length;
         GeneralPath path = new GeneralPath();
