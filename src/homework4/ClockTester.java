@@ -20,6 +20,7 @@ public class ClockTester
        MyClock clock = new MyClock(hour, min, sec);
 
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
+      icon.setLayout(new OverlayLayout(icon));
       icon.add("hour", hour);
       icon.add("minute", min);
       icon.add("second", sec);
