@@ -1,8 +1,15 @@
 package homework4;
 
 public class StopWatchDial {
+
+	public StopWatchDial(ClockHand dial) {
+		this.dial = dial;
+		dial.setAngle(90);
+		dial.setLength(490);
+		dial.setWidth(5);
+	}
+
+	ClockFace Stopwatch = new ClockFace(0,0,500);
 	
-	ClockFace Stopwatch = new ClockFace(0,0,0);
-	
-	ClockHand dial = new ClockHand(); //Thin and long
+	ClockHand dial; //Thin and long
 }

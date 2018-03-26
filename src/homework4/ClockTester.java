@@ -14,7 +14,14 @@ public class ClockTester
    {
       JFrame frame = new JFrame();
       // TODO add hands
-      
+       ClockHand hour = new ClockHand(250, 250);
+       ClockHand min = new ClockHand(250, 250);
+       ClockHand sec = new ClockHand(250, 250);
+       MyClock clock = new MyClock(hour, min, sec);
+       hour.draw((Graphics2D)frame.getGraphics());
+       min.draw((Graphics2D)frame.getGraphics());
+       sec.draw((Graphics2D)frame.getGraphics());
+
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
       
       frame.setLayout(new BorderLayout());

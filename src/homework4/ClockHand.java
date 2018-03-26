@@ -23,6 +23,7 @@ public class ClockHand implements MoveableShape {
         this.length = length;
         this.angle = angle;
     }
+
     public ClockHand(double centerX, double centerY) {
         this(2, centerX, centerY, 200, Math.PI/2);
     }

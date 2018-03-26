@@ -1,6 +1,12 @@
 package homework4;
 
 public class Stopwatch {
-	ClockHand in = new ClockHand(); //Thick and short
-	ClockHand out = new ClockHand(); //Thick and short
+
+	public Stopwatch(ClockHand in, ClockHand out) {
+		this.in = in;
+		this.out = out;
+	}
+
+	ClockHand in; //Thick and short
+	ClockHand out; //Thick and short
 }
