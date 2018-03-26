@@ -36,6 +36,7 @@ public class ClockFace extends JPanel
       Graphics2D g2 = (Graphics2D) g;
       super.paintComponent(g2);
       // draw the ticks
+      
       int tickLen = 10;
       int medTickLen = 15;
       int longTickLen = 20;
