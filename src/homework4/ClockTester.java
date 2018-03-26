@@ -10,8 +10,10 @@ import javax.swing.*;
 */
 public class ClockTester
 {
+
    public static void main(String[] args)
    {
+
       JFrame frame = new JFrame();
       // TODO add hands
        ClockHand hour = new ClockHand(250, 250);
@@ -27,6 +29,14 @@ public class ClockTester
       
       frame.setLayout(new BorderLayout());
       frame.add(icon, BorderLayout.CENTER);
+
+      ActionListener listner = event -> {
+          sec.translate(10, 10);
+          sec.paintComponent(frame.getGraphics());
+      };
+
+      Timer t = new Timer(DELAY, listner);
+      t.start();
       
       JPanel topNav = new JPanel(new FlowLayout());
       topNav.add(new JButton("clock"));
@@ -41,5 +51,6 @@ public class ClockTester
       
    }
 
+   private static final int DELAY = 1000;
    private static final int CLOCK_RADIUS = 500;
 }
