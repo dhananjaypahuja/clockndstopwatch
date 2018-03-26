@@ -20,9 +20,9 @@ public class ClockTester
        MyClock clock = new MyClock(hour, min, sec);
 
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
-      icon.add(hour);
-      icon.add(min);
-      icon.add(sec);
+      icon.add("hour", hour);
+      icon.add("minute", min);
+      icon.add("second", sec);
       
       frame.setLayout(new BorderLayout());
       frame.add(icon, BorderLayout.CENTER);
