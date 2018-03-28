@@ -1,5 +1,7 @@
 package homework4;
 
+import javafx.embed.swing.JFXPanel;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -25,7 +27,7 @@ public class ClockTester
 //       Stopwatch stopwatch = new Stopwatch(0, 0, CLOCK_RADIUS);
       
       frame.setLayout(new BorderLayout());
-      frame.add(icon, BorderLayout.CENTER);
+//      frame.add(icon, BorderLayout.CENTER);
 
       ActionListener listner = event -> {
 //          sec.translate(10, 10);
@@ -36,11 +38,21 @@ public class ClockTester
 
       Timer t = new Timer(DELAY, listner);
       t.start();
-      
+
+      JPanel clockPanel = new JPanel();
+      JPanel stopwatchPanel = new JPanel();
+      clockPanel.add(icon, BorderLayout.CENTER);
+      stopwatchPanel.add(new JLabel("StopWatch"));
+
+      clockButton.addActionListener(e -> switchPanel(frame, stopwatchPanel, clockPanel));
+      stopwatchButton.addActionListener(e -> switchPanel(frame, clockPanel, stopwatchPanel));
+
       JPanel topNav = new JPanel(new FlowLayout());
-      topNav.add(new JButton("clock"));
-      topNav.add(new JButton("stopwatch"));
+      topNav.add(clockButton);
+      topNav.add(stopwatchButton);
+       frame.add(stopwatchPanel, BorderLayout.CENTER);
       frame.add(topNav, BorderLayout.NORTH);
+      frame.add(clockPanel, BorderLayout.CENTER);
       icon.repaint();
 
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,6 +61,17 @@ public class ClockTester
 
       
    }
+
+    public static void switchPanel(JFrame mainFrame, JPanel oldPanel,
+                                   JPanel newPanel) {
+        mainFrame.remove(oldPanel);
+        mainFrame.add(newPanel, BorderLayout.CENTER);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+    }
+
+    private static JButton clockButton = new JButton("clock");
+    private static JButton stopwatchButton = new JButton("stopwatch");
 
    // Checking once a second is too slow because the timer has latency.
    private static final int DELAY = 100;
