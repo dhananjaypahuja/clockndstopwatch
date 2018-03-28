@@ -19,6 +19,7 @@ public class ClockFace extends JPanel implements MoveableShape
      */
     public ClockFace(int x, int y, int width)
     {
+        setLayout(new OverlayLayout(this));
         this.x = x;
         this.y = y;
         this.width = width;
