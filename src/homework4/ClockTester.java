@@ -18,9 +18,9 @@ public class ClockTester
       
       ClockFace icon = new ClockFace(0, 0, CLOCK_RADIUS);
       
-       ClockHand hour = new ClockHand(250, 250);
-       ClockHand min = new ClockHand(250, 250);
-       ClockHand sec = new ClockHand(250, 250);
+       ClockHand hour = new ClockHand(250, 250, Color.BLACK);
+       ClockHand min = new ClockHand(250, 250, Color.BLACK);
+       ClockHand sec = new ClockHand(1,250, 250, 200,Math.PI / 2, Color.RED);
        MyClock clock = new MyClock(icon, hour, min, sec);
 //       Stopwatch stopwatch = new Stopwatch(0, 0, CLOCK_RADIUS);
       

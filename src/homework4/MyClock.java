@@ -8,7 +8,7 @@ public class MyClock {
     private Clock sysClock;
 
     private final static int WIDTH = 500;
-    private static final int DELAY = 1000;
+//    private static final int DELAY = 1000;
 
     ClockFace clock;
     ClockHand hour;

@@ -9,6 +9,7 @@ public class ClockHand extends JComponent implements MoveableShape {
     private int width;
     private double deltaX;
     private double deltaY;
+    Color dialColor;
 
     private double iterator;
 
@@ -21,19 +22,20 @@ public class ClockHand extends JComponent implements MoveableShape {
      * @param length  the hand's length
      * @param angle   the hand's angle, counterclockwise from 3:00
      */
-    public ClockHand(int width, double centerX, double centerY, double length, double angle) {
+    public ClockHand(int width, double centerX, double centerY, double length, double angle, Color dialColor) {
         this.width = width;
         this.centerX = centerX;
         this.centerY = centerY;
         this.length = length;
         this.angle = angle;
+        this.dialColor = dialColor;
         setOpaque(false);
         setVisible(true);
         setPreferredSize(new Dimension((int) (centerX * 2), (int) (centerY * 2)));
     }
 
-    public ClockHand(double centerX, double centerY) {
-        this(2, centerX, centerY, 200, Math.PI / 2);
+    public ClockHand(double centerX, double centerY, Color dialColor) {
+        this(2, centerX, centerY, 200, Math.PI / 2, dialColor);
     }
 
     public void setAngle(double angle) {
@@ -72,6 +74,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 
     @Override
     public void draw(Graphics2D g2) {
+//        g2.setColor(dialColor);
         super.paintComponent(g2);
         paintComponent(g2);
     }
@@ -88,7 +91,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 
         GeneralPath path = new GeneralPath();
 
-        g2.setColor(Color.BLACK);
+        g2.setColor(dialColor);
         g2.setStroke(new BasicStroke(width, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 1f));
         path.moveTo(centerX, centerY);
         path.lineTo(endX, endY);
