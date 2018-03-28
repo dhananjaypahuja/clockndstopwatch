@@ -20,7 +20,8 @@ public class MyClock extends JPanel {
     }
 
     public MyClock(ClockFace clock, ClockHand hour, ClockHand min, ClockHand sec) {
-        clock.setLayout(new OverlayLayout(clock));
+
+        setLayout(new OverlayLayout(this));
         this.clock = clock;
         this.hour = hour;//Thick and Small
         this.hour.setWidth(12);
