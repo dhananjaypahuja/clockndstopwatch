@@ -4,7 +4,7 @@ import java.awt.*;
 import java.time.Clock;
 import javax.swing.*;
 
-public class MyClock extends JPanel {
+public class MyClock {
     private Clock sysClock;
 
     private final static int WIDTH = 500;
@@ -21,7 +21,7 @@ public class MyClock extends JPanel {
 
     public MyClock(ClockFace clock, ClockHand hour, ClockHand min, ClockHand sec) {
 
-        setLayout(new OverlayLayout(this));
+        //setLayout(new OverlayLayout(this));
         this.clock = clock;
         this.hour = hour;//Thick and Small
         this.hour.setWidth(12);
@@ -32,25 +32,17 @@ public class MyClock extends JPanel {
         this.sec = sec;//Thin and long
         this.sec.setWidth(3);
         this.sec.setLength(205);
-        clock.add(hour);
-        clock.add(min);
-        clock.add(sec);
+        clock.add("hour", hour);
+        clock.add("minute", min);
+        clock.add("second", sec);
         sysClock = Clock.systemUTC();
     }
 
     public void showNow() {
-        long now = sysClock.millis();
-        sec.setAngle(Math.PI/2 - now%60000 * Math.PI/30000);
-        min.setAngle(Math.PI/2 - now%3600000 * Math.PI/1800000);
-        hour.setAngle(Math.PI/2 - now%43200000 * Math.PI/21600000);
-    }
-
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        clock.paintComponent(g);
-        hour.draw((Graphics2D) g);
-        min.draw((Graphics2D) g);
-        sec.draw((Graphics2D) g);
+        long now = sysClock.millis()/1000; // Round to the nearest second
+        sec.setAngle(Math.PI/2 - now%60 * Math.PI/30);
+        min.setAngle(Math.PI/2 - now%3600 * Math.PI/1800);
+        hour.setAngle(Math.PI/2 - now%43200 * Math.PI/21600);
     }
 
     public void repaint() {

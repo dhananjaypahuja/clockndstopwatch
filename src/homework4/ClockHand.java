@@ -80,8 +80,9 @@ public class ClockHand extends JComponent implements MoveableShape {
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        centerX = iterator/60.0*2.0*Math.PI;
-        centerY = Math.PI*1.5+centerX;
+        // Don't change the position of the center.
+//        centerX = iterator/60.0*2.0*Math.PI;
+//        centerY = Math.PI*1.5+centerX;
         double endX = centerX + Math.cos(angle) * length;
         double endY = centerY - Math.sin(angle) * length;
 

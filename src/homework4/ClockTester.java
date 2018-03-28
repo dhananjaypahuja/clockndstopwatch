@@ -28,9 +28,10 @@ public class ClockTester
       frame.add(icon, BorderLayout.CENTER);
 
       ActionListener listner = event -> {
-          sec.translate(10, 10);
+//          sec.translate(10, 10);
 //          sec.paintComponent(frame.getGraphics());
-          sec.repaint();
+          clock.showNow();
+          clock.repaint();
       };
 
       Timer t = new Timer(DELAY, listner);
@@ -49,6 +50,7 @@ public class ClockTester
       
    }
 
-   private static final int DELAY = 1000;
+   // Checking once a second is too slow because the timer has latency.
+   private static final int DELAY = 100;
    private static final int CLOCK_RADIUS = 500;
 }
