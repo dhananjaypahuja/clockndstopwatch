@@ -1,10 +1,14 @@
 package homework4;
 
+import java.awt.*;
 import java.time.Clock;
 import javax.swing.*;
 
-public class MyClock{
+public class MyClock extends JPanel {
     private Clock sysClock;
+
+    private final static int WIDTH = 500;
+    private static final int DELAY = 1000;
 
     ClockFace clock;
     ClockHand hour;
@@ -12,8 +16,9 @@ public class MyClock{
     ClockHand sec;
 
     public MyClock(ClockHand hour, ClockHand min, ClockHand sec) {
-        this(new ClockFace(0, 0, 500), hour, min, sec);
+        this(new ClockFace(0, 0, WIDTH), hour, min, sec);
     }
+
     public MyClock(ClockFace clock, ClockHand hour, ClockHand min, ClockHand sec) {
         clock.setLayout(new OverlayLayout(clock));
         this.clock = clock;
@@ -37,5 +42,13 @@ public class MyClock{
         sec.setAngle(Math.PI/2 - now%60000 * Math.PI/30000);
         min.setAngle(Math.PI/2 - now%3600000 * Math.PI/1800000);
         hour.setAngle(Math.PI/2 - now%43200000 * Math.PI/21600000);
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        clock.paintComponent(g);
+        hour.draw((Graphics2D) g);
+        min.draw((Graphics2D) g);
+        sec.draw((Graphics2D) g);
     }
 }

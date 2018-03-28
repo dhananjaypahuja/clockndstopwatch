@@ -22,6 +22,7 @@ public class ClockTester
        ClockHand min = new ClockHand(250, 250);
        ClockHand sec = new ClockHand(250, 250);
        MyClock clock = new MyClock(icon, hour, min, sec);
+//       Stopwatch stopwatch = new Stopwatch(0, 0, CLOCK_RADIUS);
       
       frame.setLayout(new BorderLayout());
       frame.add(icon, BorderLayout.CENTER);
