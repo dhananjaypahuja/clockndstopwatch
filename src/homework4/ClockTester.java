@@ -30,6 +30,7 @@ public class ClockTester
       ActionListener listner = event -> {
           sec.translate(10, 10);
           sec.paintComponent(frame.getGraphics());
+          sec.repaint();
       };
 
       Timer t = new Timer(DELAY, listner);

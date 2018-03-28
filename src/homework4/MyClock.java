@@ -51,4 +51,8 @@ public class MyClock extends JPanel {
         min.draw((Graphics2D) g);
         sec.draw((Graphics2D) g);
     }
+
+    public void repaint() {
+        clock.repaint();
+    }
 }
