@@ -41,9 +41,9 @@ public class Stopwatch extends JPanel{
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        clockHand.draw((Graphics2D) g);
         clockFace.paintComponent(g);
         stopwatchDial.paintComponent(g);
+        clockHand.draw((Graphics2D) g);
     }
 
     private boolean shouldIncrementInnerDial() {
