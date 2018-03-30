@@ -3,6 +3,7 @@ package homework4;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.time.Clock;
 
 public class ClockHand extends JComponent implements MoveableShape {
     private double centerX, centerY, length, angle;
@@ -96,5 +97,10 @@ public class ClockHand extends JComponent implements MoveableShape {
         path.moveTo(centerX, centerY);
         path.lineTo(endX, endY);
         g2.draw(path);
+    }
+
+    public void showNow(Clock sysClock) {
+        long now = sysClock.millis()/1000; // Round to the nearest second
+        this.setAngle(Math.PI/2 - now%3600 * Math.PI/1800);
     }
 }

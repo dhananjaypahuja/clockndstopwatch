@@ -9,7 +9,7 @@ import javax.swing.*;
  */
 public class ClockFace extends JPanel implements MoveableShape
 {
-    private intervalSize pd = intervalSize.ONE;
+    private size pd = size.ONE;
 
     /**
      Constructs a Clock
@@ -94,7 +94,7 @@ public class ClockFace extends JPanel implements MoveableShape
         g2.setColor(Color.RED);
 
         for ( int i=1; i<=12; i++){
-            String numStr = ""+i;
+            String numStr = pd == size.ONE ? ""+i : ""+i*5;
             FontMetrics fm = g2.getFontMetrics(g2.getFont());
             int charWidth = fm.stringWidth(numStr);
             int charHeight = fm.getHeight();
@@ -116,14 +116,14 @@ public class ClockFace extends JPanel implements MoveableShape
         paintComponent(g2);
     }
 
-    public void incrementBy(intervalSize s) {
+    public void setIncrement(size s) {
         this.pd = s;
     }
 
     private int x;
     private int y;
     private int width;
-    enum intervalSize {
+    enum size {
         ONE, FIVE
     }
 }

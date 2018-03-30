@@ -24,7 +24,7 @@ public class ClockTester
        ClockHand min = new ClockHand(250, 250, Color.BLACK);
        ClockHand sec = new ClockHand(1,250, 250, 200,Math.PI / 2, Color.RED);
        MyClock clock = new MyClock(icon, hour, min, sec);
-//       Stopwatch stopwatch = new Stopwatch(0, 0, CLOCK_RADIUS);
+       Stopwatch stopwatch = new Stopwatch(0, 0, CLOCK_RADIUS);
       
       frame.setLayout(new BorderLayout());
 //      frame.add(icon, BorderLayout.CENTER);
@@ -35,6 +35,7 @@ public class ClockTester
           clock.showNow();
           clock.repaint();
       };
+
 
       Timer t = new Timer(DELAY, listner);
       t.start();
