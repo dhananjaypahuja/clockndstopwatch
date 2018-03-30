@@ -33,7 +33,7 @@ public class Stopwatch extends JPanel{
                 tick++;
             }
 //            clockHand.translate(0, 0);
-            clockHand.setAngle(Math.PI/2 - tick*Math.PI/3);
+            clockHand.setAngle(Math.PI/2 - tick*Math.PI/30);
             repaint();
         });
         t.start();
