@@ -23,12 +23,25 @@ public class Stopwatch extends JPanel{
         this.clockHand = new ClockHand(radius, radius, Color.RED);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension(width, width));
+
+        final int DELAY = 1000;
+        Timer t = new Timer(DELAY, event -> {
+            if (shouldIncrementInnerDial()) {
+                stopwatchDial.tick(); //this tick method in stopwatch needs fixing i think
+                tick = 0;
+            } else {
+                tick++;
+            }
+            clockHand.translate(0, 0);
+            repaint();
+        });
+        t.start();
 	}
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        clockFace.paintComponent(g);
         clockHand.draw((Graphics2D) g);
+        clockFace.paintComponent(g);
         stopwatchDial.paintComponent(g);
     }
 

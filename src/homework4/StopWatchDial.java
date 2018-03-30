@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.Clock;
 
+/**
+ * This class implements the inner dial of the stopwatch
+ */
 public class StopWatchDial extends JPanel{
 
     private ClockFace clockFace;
@@ -35,6 +38,8 @@ public class StopWatchDial extends JPanel{
     }
 
     //move minute hand
+    //maybe needs fixing
+    //Tried to implement inner hand such that it moves with every passing minute
     public void tick() {
 //        clockHand.move();
         sysClock = Clock.systemUTC();
@@ -42,6 +47,7 @@ public class StopWatchDial extends JPanel{
         repaint();
     }
 
+    //reset minute clock hand
     public void reset(){
         clockHand.reset();
         repaint();

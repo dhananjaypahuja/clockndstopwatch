@@ -46,7 +46,11 @@ public class ClockTester
       stopwatchPanel.add(stopwatch, BorderLayout.CENTER);
 
       clockButton.addActionListener(e -> switchPanel(frame, stopwatchPanel, clockPanel));
-      stopwatchButton.addActionListener(e -> switchPanel(frame, clockPanel, stopwatchPanel));
+      stopwatchButton.addActionListener(e -> {
+          switchPanel(frame, clockPanel, stopwatchPanel);
+          stopwatch.reset();
+          stopwatch.setVisible(true);
+      });
 
       JPanel topNav = new JPanel(new FlowLayout());
       topNav.add(clockButton);
