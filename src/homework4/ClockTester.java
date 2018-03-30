@@ -43,7 +43,7 @@ public class ClockTester
       JPanel clockPanel = new JPanel();
       JPanel stopwatchPanel = new JPanel();
       clockPanel.add(icon, BorderLayout.CENTER);
-      stopwatchPanel.add(new JLabel("StopWatch"));
+      stopwatchPanel.add(stopwatch, BorderLayout.CENTER);
 
       clockButton.addActionListener(e -> switchPanel(frame, stopwatchPanel, clockPanel));
       stopwatchButton.addActionListener(e -> switchPanel(frame, clockPanel, stopwatchPanel));
