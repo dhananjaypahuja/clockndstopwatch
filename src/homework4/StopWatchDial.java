@@ -43,7 +43,8 @@ public class StopWatchDial extends JPanel{
     public void tick() {
 //        clockHand.move();
         sysClock = Clock.systemUTC();
-        clockHand.showNow(sysClock);
+//        clockHand.showNow(sysClock);
+        clockHand.translate(0, 0);
         repaint();
     }
 
