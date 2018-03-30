@@ -19,19 +19,17 @@ public class Stopwatch extends JPanel{
         int radius = width/2;
         this.clockFace = new ClockFace(x, y, width);
         this.clockFace.setIncrement(ClockFace.size.FIVE);
-        this.stopwatchDial = new StopWatchDial(radius - radius / 2, (int) (y + width * 0.1), radius);
+        this.stopwatchDial = new StopWatchDial(radius / 2, (int) (y + width * 0.1), radius);
         this.clockHand = new ClockHand(radius, radius, Color.RED);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension(width, width));
 
         final int DELAY = 1000;
         Timer t = new Timer(DELAY, event -> {
-            if (shouldIncrementInnerDial()) {
+            tick++;
+            if (shouldIncrementInnerDial())
                 stopwatchDial.tick(); //this tick method in stopwatch needs fixing i think
-                tick = 0;
-            } else {
-                tick++;
-            }
+            tick %= 60;
 //            clockHand.translate(0, 0);
             clockHand.setAngle(Math.PI/2 - tick*Math.PI/30);
             repaint();
@@ -47,7 +45,7 @@ public class Stopwatch extends JPanel{
     }
 
     private boolean shouldIncrementInnerDial() {
-        return tick == 59;
+        return tick == 60;
     }
 
     public void reset(){
