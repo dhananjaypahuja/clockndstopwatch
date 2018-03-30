@@ -10,7 +10,7 @@ import java.time.Clock;
 public class StopWatchDial extends JPanel{
 
     private ClockFace clockFace;
-    private Clock sysClock;
+//    private Clock sysClock;
     private ClockHand clockHand; //min
 
     private int x, y, width;
@@ -42,9 +42,12 @@ public class StopWatchDial extends JPanel{
     //Tried to implement inner hand such that it moves with every passing minute
     public void tick() {
 //        clockHand.move();
-        sysClock = Clock.systemUTC();
+//        sysClock = Clock.systemUTC();
 //        clockHand.showNow(sysClock);
-        clockHand.translate(0, 0);
+//        clockHand.translate(0, 0);
+        // Avoid floating point errors by converting to degrees and back
+        int angleDeg = (int) (clockHand.getAngle() * 180 / Math.PI) - 6;
+        clockHand.setAngle(angleDeg * Math.PI / 180);
         repaint();
     }
 

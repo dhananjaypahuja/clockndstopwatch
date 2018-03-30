@@ -42,6 +42,9 @@ public class ClockHand extends JComponent implements MoveableShape {
     public void setAngle(double angle) {
         this.angle = angle;
     }
+    public double getAngle() {
+        return angle;
+    }
 
     public void setLength(double length) {
         this.length = length;
