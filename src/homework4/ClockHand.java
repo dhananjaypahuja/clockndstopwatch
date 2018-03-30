@@ -99,6 +99,7 @@ public class ClockHand extends JComponent implements MoveableShape {
         g2.draw(path);
     }
 
+    // Not needed
     public void showNow(Clock sysClock) {
         long now = sysClock.millis()/1000; // Round to the nearest second
         this.setAngle(Math.PI/2 - now%3600 * Math.PI/1800);
