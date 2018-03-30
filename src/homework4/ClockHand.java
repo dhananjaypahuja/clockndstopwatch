@@ -56,7 +56,7 @@ public class ClockHand extends JComponent implements MoveableShape {
 
     @Override
     public void translate(int dx, int dy) {
-
+        // This functionality doesn't make sense within a translate() method
         iterator++;
         double angleFrom12 = iterator / 60.0 * 2.0 * Math.PI;
         double angleFrom3 = Math.PI * 1.5 + angleFrom12;
