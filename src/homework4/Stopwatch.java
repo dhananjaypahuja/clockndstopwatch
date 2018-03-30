@@ -49,9 +49,9 @@ public class Stopwatch extends JPanel{
     }
 
     public void reset(){
-        clockHand.reset();
-        repaint();
         tick = 0;
+        clockHand.reset();
         stopwatchDial.reset();
+        repaint();
     }
 }

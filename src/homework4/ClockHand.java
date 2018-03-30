@@ -69,9 +69,11 @@ public class ClockHand extends JComponent implements MoveableShape {
     }
 
     public void reset() {
-        iterator = 0;
+        angle = Math.PI / 2;
+//        iterator = 0;
     }
 
+    // This doesn't fit the iterator design pattern; maybe it should be renamed?
     public double getIterator() {
         return iterator;
     }
