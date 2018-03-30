@@ -35,8 +35,8 @@ public class ClockHand extends JComponent implements MoveableShape {
         setPreferredSize(new Dimension((int) (centerX * 2), (int) (centerY * 2)));
     }
 
-    public ClockHand(double centerX, double centerY, Color dialColor) {
-        this(2, centerX, centerY, 200, Math.PI / 2, dialColor);
+    public ClockHand(int width, int length, double centerX, double centerY, Color dialColor) {
+        this(width, centerX, centerY, length, Math.PI / 2, dialColor);
     }
 
     public void setAngle(double angle) {

@@ -24,14 +24,14 @@ public class MyClock {
         //setLayout(new OverlayLayout(this));
         this.clock = clock;
         this.hour = hour;//Thick and Small
-        this.hour.setWidth(12);
-        this.hour.setLength(150);
+//        this.hour.setWidth(12);
+//        this.hour.setLength(150);
         this.min = min;//Medium and Long
-        this.min.setWidth(6);
-        this.min.setLength(200);
+//        this.min.setWidth(6);
+//        this.min.setLength(200);
         this.sec = sec;//Thin and long
-        this.sec.setWidth(3);
-        this.sec.setLength(205);
+//        this.sec.setWidth(3);
+//        this.sec.setLength(205);
         clock.add("hour", hour);
         clock.add("minute", min);
         clock.add("second", sec);

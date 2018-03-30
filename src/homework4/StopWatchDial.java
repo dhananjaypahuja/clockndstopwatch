@@ -26,7 +26,7 @@ public class StopWatchDial extends JPanel{
 	    this.width = width;
 		this.clockFace = new ClockFace(x, y, width);
 		this.clockFace.setIncrement(ClockFace.size.FIVE);
-		this.clockHand = new ClockHand(250, 250, Color.RED);
+		this.clockHand = new ClockHand(7, 150, 250, 250, Color.BLACK);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension(width, width));
 	}
@@ -39,7 +39,7 @@ public class StopWatchDial extends JPanel{
 
     //move minute hand
     //maybe needs fixing
-    //Tried to implement inner hand such that it moves with every passing minute
+    //implement inner hand such that it moves with every passing minute
     public void tick() {
 //        clockHand.move();
 //        sysClock = Clock.systemUTC();
